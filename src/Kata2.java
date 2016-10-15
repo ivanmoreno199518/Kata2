@@ -1,14 +1,12 @@
-import java.util.HashMap;
 import java.util.Map;
 
 public class Kata2 {
 
     public static void main(String[] args) {
-        int[] data = {6,9,5,8,67,2,4,5,5,5,3,9,5,-4,3,2};
-        Map <Integer, Integer> histogram = new HashMap <>();
+        String[] names ={"Paco","Pepe","Paco","Paco","Jose","jose","Lucia"};
+        Histogram initialHistogram = new Histogram(names);
+        Map<String,Integer> resultHistogram = initialHistogram.getHistogram();
 
-        for (int value : data) { histogram.put(value,histogram.containsKey(value) ? histogram.get(value)+1 : 1); }
-
-        for (int key : histogram.keySet()) { System.out.println(key + " ----> " + histogram.get(key)); }
+        for (String key : resultHistogram.keySet()) System.out.println(key + " -----> " + resultHistogram.get(key));
     }
 }
